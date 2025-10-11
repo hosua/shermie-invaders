@@ -14,7 +14,8 @@ module.exports = {
     entry: "./src/main.js",
     output: {
         path: path.resolve(process.cwd(), 'dist'),
-        filename: "./bundle.min.js"
+        filename: "./bundle.min.js",
+        publicPath: './'
     },
     devtool: false,
     performance: {
@@ -76,6 +77,7 @@ module.exports = {
                 { from: 'public/icon-256.png', to: 'icon-256.png' },
                 { from: 'public/icon-512.png', to: 'icon-512.png' },
                 { from: 'public/logo.png', to: 'logo.png' },
+                { from: 'sw.js', to: 'sw.js' },
             ],
         }),
     ]

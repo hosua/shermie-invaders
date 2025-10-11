@@ -1,14 +1,13 @@
-var cacheName = 'phaser-v1';
+var cacheName = 'shermie-invaders-v1';
 var filesToCache = [
-  '/',
-  '/index.html',
-  '/public/logo.png', 
-  '/public/icon-192.png',
-  '/public/icon-256.png', 
-  '/public/icon-512.png',
-  '/js/game.js',
-  '/css/style.css',
-  'https://cdn.jsdelivr.net/gh/photonstorm/phaser@3.10.1/dist/phaser.min.js'
+  './',
+  './index.html',
+  './logo.png', 
+  './icon-192.png',
+  './icon-256.png', 
+  './icon-512.png',
+  './bundle.min.js',
+  './style.css'
 ];
 
 self.addEventListener('install', function(event) {
