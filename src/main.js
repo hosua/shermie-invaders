@@ -226,4 +226,8 @@ export function init_collision_events(scene, scene_key) {
     });
 }
 
-export default new Phaser.Game(config);
+const game = new Phaser.Game(config);
+if (typeof window !== 'undefined') {
+    window.game = game;
+}
+export default game;

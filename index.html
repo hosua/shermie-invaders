@@ -92,6 +92,28 @@
       window.addEventListener("touchstart", function () {
         IS_MOBILE = true;
       });
+      
+      // Prevent fullscreen on refresh when in iframe
+      (function() {
+        function constrainToIframe() {
+          try {
+            if (window.self !== window.top) {
+              // In iframe, ensure container doesn't exceed iframe bounds
+              const container = document.getElementById('game-container');
+              if (container) {
+                container.style.maxWidth = '100%';
+                container.style.maxHeight = '100%';
+                container.style.overflow = 'hidden';
+              }
+            }
+          } catch (e) {
+            // Cross-origin iframe, ignore
+          }
+        }
+        
+        constrainToIframe();
+        window.addEventListener('resize', constrainToIframe);
+      })();
     </script>
   </body>
 </html>
